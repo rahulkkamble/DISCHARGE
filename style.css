@@ -10,14 +10,16 @@
 :root {
     --color-primary: #01c4b1;
     --color-secondary: #ff3d87;
-    --color-text-light: #000000aa;
-    --color-lighten: #00000066;
-    --bg-grey: #aaaaaa22;
-    --font: 'Poppins', sans-serif;
+    --color-third: #737989;
+    --color-text-light: #737989;
+    --color-lighten: #8d929f;
+    --bg-grey: #f6f7f9;
+    --border-grey: #dddddd;
+    --font-poppins: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #ededed !important;
+    background-color: var(--bg-grey) !important;
 }
 
 
@@ -206,7 +208,7 @@ button.dropdown-toggle {
 a.card-outer{
     padding: .45rem;
     background-color: white;
-    border-radius: .4rem;
+    border-radius: .5rem;
     text-decoration: none;
     color: black;
 }
@@ -238,8 +240,8 @@ a.card-outer:hover{
 .card-body i{
     position: absolute;
     text-decoration: none;
-    bottom: .3rem;
-    right: 1.2rem;
+    bottom: 0.1rem;
+    right: 0.5rem;
     background-color: transparent;
     font-size: 1.15rem;
     color: var(--color-secondary);
@@ -252,12 +254,53 @@ a.card-outer:hover{
 .card-body i::after{
     position: absolute;
     content: "";
-    bottom: -12px;
-    right: -14px;
-    height: 42px;
-    width: 42px;
+    bottom: -10px;
+    right: -11px;
+    height: 38px;
+    width: 38px;
     border: 2px solid var(--color-secondary);
     border-radius: 50%;
 }
 
 /* ******************* LOWER SECTION *************************** */
+
+.quote-wrapper{
+    position: relative;
+}
+
+.quote-wrapper::after,
+.quote-wrapper::before{
+    position: absolute;
+    content: "";
+    height: 60px;
+    width: 590px;
+}
+
+.quote-wrapper::after{
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid var(--border-grey);
+    border-left: 2px solid var(--border-grey);
+}
+.quote-wrapper::before{
+    top: -.5rem;
+    right: 0;
+    border-top: 2px solid var(--border-grey);
+    border-right: 2px solid var(--border-grey);
+}
+
+.lower-section i{
+    position: absolute;
+    font-size: 2rem !important;
+    color: var(--color-third);
+}
+
+.lower-section i.left-quote{
+    top: -35px;
+    left: -15px;
+}
+
+.lower-section i.right-quote{
+    bottom: -20px;
+    right: -10px;
+}
