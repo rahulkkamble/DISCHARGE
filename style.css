@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font);
+    font-family: var(--font-poppins);
 }
 
 :root {
@@ -194,50 +194,54 @@ button.dropdown-toggle {
 
 /* ******************* Main section ******************** */
 
-.card-container{
+.card-container {
     width: 700px;
     margin-left: auto;
     margin-right: auto;
     gap: 3rem;
 }
 
-.heading-section p{
+.heading-section p {
     color: var(--color-text-light);
 }
 
-a.card-outer{
+a.card-outer {
     padding: .45rem;
     background-color: white;
     border-radius: .5rem;
     text-decoration: none;
     color: black;
 }
-a.card-outer:hover{
+
+a.card-outer:hover {
     color: black;
 }
-.card{
+
+.card {
     width: 200px;
     padding: .8rem;
     border: 1px solid grey;
 }
-.card img{
+
+.card img {
     width: 100%;
     object-fit: cover;
     height: 150px;
 }
 
-.card-body{
+.card-body {
     border-top: 1.5px solid rgba(128, 128, 128, 0.351);
     padding-bottom: 0.5rem !important;
     height: 140px;
     position: relative;
 }
 
-.card-body p{
+.card-body p {
     font-size: .8rem;
     color: var(--color-text-light);
 }
-.card-body i{
+
+.card-body i {
     position: absolute;
     text-decoration: none;
     bottom: 0.1rem;
@@ -247,11 +251,13 @@ a.card-outer:hover{
     color: var(--color-secondary);
     margin-bottom: .3rem;
 }
+
 .card-body i:hover,
-.card-body i:focus{
+.card-body i:focus {
     color: #d33a74;
 }
-.card-body i::after{
+
+.card-body i::after {
     position: absolute;
     content: "";
     bottom: -10px;
@@ -264,43 +270,54 @@ a.card-outer:hover{
 
 /* ******************* LOWER SECTION *************************** */
 
-.quote-wrapper{
+.quote-wrapper {
     position: relative;
+    width: 40%;
 }
 
 .quote-wrapper::after,
-.quote-wrapper::before{
+.quote-wrapper::before {
     position: absolute;
     content: "";
-    height: 60px;
-    width: 590px;
+    height: 60%;
+    width: 92%;
 }
 
-.quote-wrapper::after{
+.quote-wrapper::after {
     bottom: 0;
     left: 0;
     border-bottom: 2px solid var(--border-grey);
     border-left: 2px solid var(--border-grey);
 }
-.quote-wrapper::before{
+
+.quote-wrapper::before {
     top: -.5rem;
     right: 0;
     border-top: 2px solid var(--border-grey);
     border-right: 2px solid var(--border-grey);
 }
 
-.lower-section i{
+.lower-section i {
     position: absolute;
     font-size: 2rem !important;
     color: var(--color-third);
 }
 
-.lower-section i.left-quote{
+.lower-section i.left-quote {
     top: -35px;
     left: -15px;
 }
 
-.lower-section i.right-quote{
+.lower-section i.right-quote {
     bottom: -20px;
     right: -10px;
+}
+
+p.quote {
+    color: var(--color-text-light);
+    font-size: .9rem;
+    font-weight: 400;
+}
+h6.author-name::before{
+    content: "-";
 }
