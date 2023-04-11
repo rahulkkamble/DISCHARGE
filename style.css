@@ -10,7 +10,7 @@
 :root {
     --color-primary: #01c4b1;
     --color-secondary: #ff3d87;
-    --color-third: #737989;
+    --color-tertiary: #737989;
     --color-text-light: #737989;
     --color-lighten: #8d929f;
     --bg-grey: #f6f7f9;
@@ -300,7 +300,7 @@ a.card-outer:hover {
 .lower-section i {
     position: absolute;
     font-size: 2rem !important;
-    color: var(--color-third);
+    color: var(--color-tertiary);
 }
 
 .lower-section i.left-quote {
