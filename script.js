@@ -2,6 +2,8 @@
 const searchBar = document.getElementById('searchMain');
 const modalSearchBar = document.getElementById('searchModalBar');
 const searchModal = document.querySelector('#searchModal');
+const modalDialog = document.querySelector('.modal-dialog')
+const searchSmall = document.querySelector('.search-icon-only');
 
 searchBar.addEventListener('click',(e)=>{
   modalSearchBar.focus();
@@ -10,6 +12,15 @@ searchBar.addEventListener('click',(e)=>{
 
 searchModal.addEventListener('shown.bs.modal', function () {
   console.log('modal opened')
+  const searchBarWidth = searchBar.clientWidth;
+  console.log("searchBarWidth = " + searchBarWidth)
+  if(searchBarWidth > 100){
+    modalSearchBar.style.width = searchBarWidth + 'px';
+    modalDialog.style.width = searchBarWidth + 'px';
+  } else {
+    modalSearchBar.style.width = '200px';
+    modalDialog.style.width = '200px';
+  }
   modalSearchBar.focus();
 });
 
@@ -17,7 +28,15 @@ searchModal.addEventListener('hidden.bs.modal', function () {
   console.log('modal closed');
   modalSearchBar.value = '';
   searchBar.setAttribute('disabled' , '')
+  searchSmall.focus();
 });
+
+
+searchSmall.addEventListener('click', () => {
+  console.log('clicked on search icon div');
+  searchBar.click();
+  searchBar.removeAttribute('disabled' , '')
+})
 
 // Header ends here
 

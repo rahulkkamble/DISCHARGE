@@ -31,14 +31,17 @@
         <div class="brand-logo">
             <a href="#"><img src="./assets/logo/Brand-logo.PNG" alt="brand-logo"></a>
         </div>
-        <div class="search-bar">
-            <div id="search-autocomplete" class="form-outline d-flex">
+
+        <!-- main searchBar -->
+        <div class="search-bar search-bar-main">
+            <div id="searchWrapperMain" class="form-outline d-flex">
                 <input type="search" id="searchMain" class="form-control lh-lg px-3" placeholder="Search here"
                     data-bs-toggle="modal" data-bs-target="#searchModal" />
                 <i class="search-icon fas fa-search"></i>
             </div>
         </div>
-        <!-- The Modal -->
+
+        <!-- The Modal of searchBar -->
         <div class="modal" id="searchModal">
             <div class="modal-dialog modal-md ">
                 <div class="modal-content">
@@ -73,7 +76,10 @@
                 </div>
             </div>
         </div>
+
+        <!-- profile and notification -->
         <div class="profile-notification d-flex align-items-center">
+            <!-- Notification dropdown -->
             <div class="dropdown notification">
                 <button type="button" class="btn dropdown-toggle bell-btn" id="dropdownMenuOffset"
                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
@@ -103,13 +109,15 @@
                         </a></li>
                 </ul>
             </div>
+
+            <!-- Profile dropdown -->
             <div class="dropdown profile">
                 <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown"
                     aria-expanded="false" data-bs-offset="10,20">
                     <img class="profile-image border rounded-circle"
                         src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=AlexJohn" alt="profile-image">
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                <ul class="dropdown-menu profile-menu" aria-labelledby="dropdownMenuOffset">
                     <li class="px-3"><strong>Profile</strong></li>
                     <li>
                         <hr class="dropdown-divider">
@@ -118,6 +126,12 @@
                     <li><a class="dropdown-item" href="#">Log Out</a></li>
                 </ul>
             </div>
+
+            <!-- search Icon for smaller screen only -->
+            <div class="search-icon-only">
+                <i class="search-icon fas fa-search"></i>
+            </div>
+
         </div>
     </header>
     <!-- H E A D E R  Ends Here -->
