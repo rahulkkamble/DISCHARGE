@@ -10,6 +10,7 @@
 :root {
     --color-primary: #01c4b1;
     --color-secondary: #ff3d87;
+    --color-secondary-darken: #dc437e;
     --color-tertiary: #737989;
     --color-text-light: #737989;
     --color-lighten: #8d929f;
@@ -20,7 +21,7 @@
 
 body {
     background-color: var(--bg-grey) !important;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 
@@ -28,6 +29,9 @@ body {
 header {
     height: 6.5rem;
     background-color: #ffffff;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.24); */
 }
 
@@ -495,10 +499,9 @@ h6.author-name::before {
     background-color: var(--border-grey);
 }
 
-div.content {
-    margin-left: 200px;
-    padding: 1px 16px;
-    height: 1000px;
+.main-content {
+    margin-left: 300px;
+    margin-top: 3rem;
 }
 
 .sidebar-heading {
@@ -547,4 +550,73 @@ div.content {
 
 .sidebar button.btn i {
     padding: 0 .5rem;
+}
+
+.sidebar button.btn:hover,
+.sidebar button.btn:focus {
+    background-color: var(--color-secondary-darken);
+    color: white;
+    /* border: 0.1rem solid var(--color-primary); */
+    box-shadow: 0px 2px 4px var(--color-primary);
+}
+
+
+/* ***************************************  ************************** */
+/* ***************************************  ******|            |****** */
+/* ************* My Insurance ************  **********|    |********** */
+/* *******************||******************  **********|    |********** */
+/* *******************||******************  **********|    |********** */
+/* *****************__||__****************  **********|    |********** */
+/* *****************\    /****************  ******|            |****** */
+/* ******************\  /*****************  ************************** */
+/* *******************\/******************  ************************** */
+
+
+.upper-information .content-wrapper,
+.bottom-information .content-wrapper {
+    background-color: white;
+    border-radius: .5rem;
+}
+
+.upper-up img {
+    height: 4rem;
+    object-fit: cover;
+    width: fit-content;
+}
+
+.upper-up-right .tags-wrapper {
+    column-gap: 1rem;
+}
+
+.upper-up-right .tags {
+    font-size: .8rem;
+    color: var(--color-tertiary);
+    padding: .2rem .6rem;
+    border: 1px solid var(--border-grey);
+    border-radius: .5rem;
+}
+
+.card-wrapper span{
+    font-size: .8rem;
+    color: var(--color-tertiary);
+}
+.upper-right .card-wrapper span{
+    font-size: .95rem;
+    color: var(--color-tertiary);
+}
+.upper-right .card-wrapper{
+    margin: auto;
+    position: relative;
+}
+.upper-right .card-wraper::after{
+    content: "";
+    position: absolute;
+    bottom: -1rem;
+    height: 1px;
+    width: 95%;
+    background-color: var(--border-grey);
+}
+.upper-right .card-wraper:last-child:after{
+    height: 0;
+    width: 0;
 }
