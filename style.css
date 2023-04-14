@@ -29,14 +29,20 @@ body {
 header {
     height: 6.5rem;
     background-color: #ffffff;
-    position: -webkit-sticky;
+    /* position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 0; */
+    padding: initial 1rem;
+    gap: 2rem;
     /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.24); */
 }
 
 .brand-logo {
-    width: 242px;
+    width: 220px;
+    min-width: 150px;
+}
+.brand-logo img{
+    width: 100%;
 }
 
 .search-bar {
@@ -58,7 +64,7 @@ header {
 
 /* *************************************************** search modal */
 .modal.show .modal-dialog {
-    transform: translate(62.5px, 1px) !important;
+    transform: translate(29.5px, 1px) !important;
     max-width: 580px;
     min-width: 200px;
 }
@@ -143,12 +149,16 @@ input.form-control::placeholder {
     padding-left: .5rem;
 } */
 
+.profile-notification{
+    gap: .7rem;
+}
+
 .profile-notification .profile-image {
     height: 48px;
     width: 48px;
 }
 
-.dropdown-toggle i {
+.dropdown-toggle img.bell-svg {
     font-size: 1.2rem;
     border-radius: 50%;
 }
@@ -168,6 +178,9 @@ button.dropdown-toggle {
 .notification-menu .dropdown-item {
     position: relative;
     display: flex;
+}
+.change-svg-primary{
+    filter: invert(58%) sepia(74%) saturate(2560%) hue-rotate(133deg) brightness(96%) contrast(99%);
 }
 
 .bell-btn {
@@ -320,8 +333,8 @@ a.card-outer:hover {
 }
 
 .card img {
-    width: 100%;
-    object-fit: cover;
+    width: 95%;
+    object-fit: contain;
     height: 150px;
 }
 
@@ -503,6 +516,11 @@ h6.author-name::before {
     margin-left: 300px;
     margin-top: 3rem;
 }
+.main-content-no-sidebar {
+    margin-left: 0;
+    margin-top: 3rem;
+  }
+  
 
 .sidebar-heading {
     padding: 2rem;
@@ -572,8 +590,7 @@ h6.author-name::before {
 /* *******************\/******************  ************************** */
 
 
-.upper-information .content-wrapper,
-.bottom-information .content-wrapper {
+.card-section .content-wrapper {
     background-color: white;
     border-radius: .5rem;
 }
@@ -582,6 +599,9 @@ h6.author-name::before {
     height: 4rem;
     object-fit: cover;
     width: fit-content;
+}
+.upper-up-right{
+    padding-left: 0 !important;
 }
 
 .upper-up-right .tags-wrapper {
@@ -606,7 +626,6 @@ h6.author-name::before {
 }
 .upper-right .card-wrapper{
     margin: auto;
-    position: relative;
 }
 .upper-right .card-wraper::after{
     content: "";

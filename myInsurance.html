@@ -27,9 +27,9 @@
 <body>
 
     <!-- H E A D E R -->
-    <header class="d-flex justify-content-around align-items-center py-5">
-        <div class="brand-logo">
-            <a href="#"><img src="./assets/logo/Brand-logo.PNG" alt="brand-logo"></a>
+    <header class="d-flex justify-content-between align-items-center p-4">
+        <div class="brand-logo ">
+            <a href="#"><img src="./assets/logo/brand-logo-svg.svg" alt="brand-logo"></a>
         </div>
 
         <!-- main searchBar -->
@@ -83,7 +83,7 @@
             <div class="dropdown notification">
                 <button type="button" class="btn dropdown-toggle bell-btn" id="dropdownMenuOffset"
                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
-                    <i class="fa-regular fa-bell"></i>
+                    <img class="bell-svg change-svg-primary" src="./assets/small-icons/bell-icon.svg" alt="bell-icon" srcset="">
                     <span class="notice-dot"></span>
                 </button>
                 <ul class="dropdown-menu notification-menu" aria-labelledby="dropdownMenuOffset">
@@ -115,7 +115,7 @@
                 <button type="button" class="btn dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown"
                     aria-expanded="false" data-bs-offset="10,20">
                     <img class="profile-image border rounded-circle"
-                        src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=AlexJohn" alt="profile-image">
+                        src="./assets/small-icons/Ellipse_3_profile-rounded.svg" alt="profile-image">
                 </button>
                 <ul class="dropdown-menu profile-menu" aria-labelledby="dropdownMenuOffset">
                     <li class="px-3"><strong>Profile</strong></li>
@@ -178,17 +178,17 @@
 
     <main class="main-content ">
         <!-- upper card section -->
-        <section class="upper-information container p-5">
+        <section class="upper-information card-section container p-5">
             <div class="row content-wrapper">
                 <!-- upper left section -->
                 <div class="col-md-9">
                     <!-- upper up -->
                     <div class=" border-bottom border-end py-4 px-2 row d-flex flex-row align-items-center upper-up">
-                        <div class="col-2">
+                        <div class="col-3 mx-auto d-flex justify-content-center">
                             <img class="img-fluid" src="./assets/sidebar/care.png" alt="insurance-company-logo">
                         </div>
                         <!-- upper up right -->
-                        <div class="col-10 flex-column pt-2 upper-up-right">
+                        <div class="col-9 flex-column pt-2 upper-up-right">
                             <h4 class="insurance-name">Care Supreme</h4>
                             <div class="tags-wrapper pt-2 d-flex g-4">
                                 <span class="tags">
@@ -247,8 +247,9 @@
             </div>
         </section>
         <!-- bottom section -->
-        <section class="bottom-information container p-5">
+        <section class="bottom-information card-section container p-5">
             <div class="row content-wrapper">
+                <!--  -->
 
             </div>
         </section>
@@ -263,5 +264,4 @@
     <script src="./script.js"></script>
 
 </body>
-
 </html>
