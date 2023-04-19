@@ -319,7 +319,7 @@ button.dropdown-toggle {
     }
 
     .notification .notification-menu {
-        transform: translate3d(-288.8px, 57.6px, 0px);
+        width: 320px;
     }
 
 }
@@ -723,7 +723,6 @@ h6.author-name::before {
         min-width: 200px;
         position: relative;
         height: auto;
-        /* border-bottom: 1px solid var(--color-lighten); */
         overflow-x: scroll;
         border-right: none;
     }
@@ -786,8 +785,6 @@ h6.author-name::before {
         margin-left: 0;
         margin-top: 0;
     }
-
-
 }
 
 
