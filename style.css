@@ -29,6 +29,13 @@ body {
 /* =========================== R E U S A B L E ======================== */
 /* =========================== R E U S A B L E ======================== */
 
+.pl-5{
+    padding-left: 3rem !important;
+}
+.pr-5{
+    padding-right: 3rem !important;
+}
+
 .btn-secondary-color {
     padding: .6rem .8rem !important;
     background-color: var(--color-secondary) !important;
@@ -93,11 +100,13 @@ header {
 
 /* *************************************************** search modal */
 .modal.show .modal-dialog {
-    transform: translate(29.5px, 1px) !important;
+    transform: translate(30.5px, 1px) !important;
     max-width: 580px;
     min-width: 200px;
 }
-
+.modal-dialog .search-bar i.search-icon{
+    display: none !important;
+}
 #searchModal .modal-content {
     border: none !important;
     border-radius: 12px 12px 0px 0px;
@@ -141,6 +150,18 @@ header {
     text-decoration: none;
     color: whitesmoke;
     padding: 0 1rem;
+}
+
+@media screen and (max-width: 991px) {
+    .modal.show .modal-dialog {
+        transform: translate(1%, 0) !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal.show .modal-dialog {
+        transform: translate(1%, 0) !important;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -793,7 +814,8 @@ h6.author-name::before {
         position: sticky;
         top: 0;
         right: 0;
-        left: 31%;
+        transform: translateX(-50%);
+        left: 50%;
         font-size: 0.8rem;
     }
 
@@ -893,4 +915,133 @@ h6.author-name::before {
         padding-left: 0rem !important;
         padding-right: 0rem !important;
     }
+}
+
+
+/* ============================================== M Y  P R O C E D U R E =========================================== */
+/* ============================================== M Y  P R O C E D U R E =========================================== */
+/* ============================================== M Y  P R O C E D U R E =========================================== */
+/* ============================================== M Y  P R O C E D U R E =========================================== */
+/* ============================================== M Y  P R O C E D U R E =========================================== */
+/* ============================================== M Y  P R O C E D U R E =========================================== */
+
+.back-btn {
+    background-color: white !important;
+    box-shadow: 0 2px 6px -2px var(--color-lighten);
+    border-radius: 0.5rem;
+}
+
+.nav-tabs .nav-link{
+    border: none !important;
+    color: grey;
+}
+
+.nav-tabs .nav-link.active{
+    color: black;
+    box-shadow: 0 .8rem 0rem 0rem #fff,
+                0 1rem 0rem 0rem var(--color-primary);
+}
+
+a.view-procedure-details{
+    text-decoration: none;
+}
+
+a.view-procedure-details i{
+    font-size: 1.2rem;
+}
+
+.progress-bar-wrapper{
+    width: 300px;
+}
+
+.progress-bar{
+    background-color: var(--color-primary) !important;
+}
+
+.progress {
+    height: 12px !important;
+    margin-bottom: 1rem;
+    width: auto;
+}
+
+.procedure-detail {
+    row-gap: 1.5rem;
+}
+
+ul.procedure-detail {
+    position: relative;
+}
+
+ul.procedure-detail::before {
+    position: absolute;
+    content: "";
+    width: .1rem;
+    left: -35px;
+    top: 60px;
+    bottom: 80px;
+    background-color: var(--color-primary);
+}
+
+.procedure-detail li {
+    position: relative;
+}
+
+.procedure-detail li::before {
+    position: absolute;
+    content: "";
+    height: .71rem;
+    width: .71rem;
+    border-radius: 50%;
+    left: -40px;
+    top: 10px;
+    background-color: var(--color-primary);
+}
+
+.procedure-detail li span {
+    padding-top: .2rem;
+}
+
+.discharge-btn {
+    margin: 1.5rem 0;
+    border-radius: .2rem;
+    padding: 0.2rem .8rem !important;
+}
+
+/* =============== media querries for my procedure ============================ */
+/* =============== media querries for my procedure ============================ */
+
+@media screen and (max-width: 990px) and (min-width: 768px) {
+    .my-procedure-container{
+        width: 100%;
+        max-width: 900px !important;
+        min-width: 770px !important;
+    }
+    #currentTab{
+        padding: 0;
+    }
+    #currentTab .tab{
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .progress-bar-wrapper{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .my-procedure-container.w-75{
+        width: 90% !important;
+    }
+    #currentTab .tab{
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .left-tab img{
+        width: 40px;
+        margin: 0 1rem;
+    }
+
 }
