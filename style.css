@@ -426,12 +426,16 @@ a.card-outer:hover {
 }
 
 /* ***************************** card section media queries ************************** */
+@media screen and (max-width: 1024px) {
+    .quote-wrapper{
+        width: 75% !important;
+    }
+}
 @media screen and (max-width: 768px) {
     section.card-container {
         flex-direction: column;
         width: 300px;
     }
-
     .card {
         width: 100%;
     }
@@ -644,7 +648,7 @@ h6.author-name::before {
     .side-links a {
         display: flex;
         flex-direction: column;
-        flex-wrap: nowrap;
+        /* flex-wrap: nowrap; */
         /* padding: 12px 6px; */
     }
 
@@ -741,21 +745,22 @@ h6.author-name::before {
     }
 
     .sidebar-heading {
-        /* flex-direction: column; */
+        position: sticky;   /* added for vertical and horizontal sidebar */
+        left: 0;    /* added for vertical and horizontal sidebar */
+        top: 0;     /* added for vertical and horizontal sidebar */
         gap: 1.5rem;
-        padding: 1.5rem;
         text-align: center;
     }
 
-    aside.flex-column {
+    /* aside.flex-column {
         flex-direction: row !important;
         gap: 1rem;
-    }
+    } */
 
     ul.side-links {
         display: flex;
         margin-bottom: 0;
-        gap: 1rem;
+        /* gap: 1rem; */
 
     }
 
@@ -765,7 +770,7 @@ h6.author-name::before {
         justify-content: center;
         text-align: center;
         align-items: center;
-        margin: auto;
+        /* margin: auto; */
         display: flex;
         padding: 0;
     }
@@ -774,10 +779,21 @@ h6.author-name::before {
         margin: auto;
     }
 
+    .side-links a{
+        padding: 12px;
+    }
+    .side-links a span{
+        width: 175px;
+    }
+
     .sidebar button.btn {
-        padding: 0.3rem 1rem !important;
-        margin: 1.5rem;
-        gap: .5rem;
+        /* padding: 0.3rem 1rem !important; */
+        /* margin: 1.5rem; */
+        /* gap: .5rem; */
+        position: sticky;
+        top: 0;
+        right: 0;
+        left: 31%;
         font-size: 0.8rem;
     }
 
