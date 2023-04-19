@@ -35,18 +35,25 @@ body {
     color: white !important;
 }
 
-.subtext{
+.subtext {
     font-size: 0.8rem;
     color: var(--color-tertiary);
 }
 
-.vpm-b-0{
+.vpm-b-0 {
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
     line-height: normal !important;
 }
 
+.back-btn {
+    background-color: white !important;
+    box-shadow: 0 2px 6px -2px var(--color-lighten);
+    border-radius: 0.5rem;
+}
 
+
+/* *************************** H E A D E R **************************** */
 /* *************************** H E A D E R **************************** */
 /* *************************** H E A D E R **************************** */
 /* *************************** H E A D E R **************************** */
@@ -54,12 +61,8 @@ body {
 header {
     height: 6.5rem;
     background-color: #ffffff;
-    /* position: -webkit-sticky;
-    position: sticky;
-    top: 0; */
-    padding: initial 1rem;
+    padding: 1.5rem;
     gap: 2rem;
-    /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.24); */
 }
 
 .brand-logo {
@@ -105,9 +108,14 @@ header {
     border-radius: 12px 12px 0px 0px;
 }
 
+#searchModalBar:focus .search-icon {
+    display: none;
+}
+
 #searchModal .search-result {
-    max-height: 400px;
+    max-height: 300px;
     width: 100%;
+    overflow-y: auto;
     border-radius: 0px 0px 10px 10px;
     background-color: #000000aa;
 }
@@ -278,6 +286,14 @@ button.dropdown-toggle {
 /* header media query */
 @media screen and (max-width: 576px) {
 
+    header {
+        gap: 1rem;
+    }
+
+    header.p-4 {
+        padding: 0.5rem !important;
+    }
+
     #searchWrapperMain input,
     #searchWrapperMain i,
     .search-bar-main {
@@ -309,9 +325,14 @@ button.dropdown-toggle {
 }
 
 @media screen and (max-width: 420px) {
+    header {
+        gap: 0;
+        justify-content: center;
+    }
+
     .brand-logo {
-        width: 70px;
         overflow: hidden;
+        min-width: 115px;
     }
 }
 
@@ -484,6 +505,7 @@ h6.author-name::before {
 /* ******************\  /*****************                     */
 /* *******************\/****************** */
 
+
 .sidebar {
     margin: 0;
     padding: 0;
@@ -505,8 +527,6 @@ h6.author-name::before {
     transition: all .3s ease-in-out;
     border-right: 0px solid var(--color-primary);
 }
-
-
 
 .sidebar a:hover span,
 .sidebar a:focus span {
@@ -603,6 +623,175 @@ h6.author-name::before {
     box-shadow: 0px 2px 4px var(--color-primary);
 }
 
+/* Media Query for sidebar and main-content timestamp : 19/04/2023 11:10am */
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        max-width: fit-content;
+        min-width: 100px;
+    }
+
+    .sidebar-heading {
+        padding: 1.5rem 1rem;
+        gap: .5rem;
+    }
+
+    .sidebar-heading h5 {
+        font-size: 1rem;
+    }
+
+    .side-links a {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        /* padding: 12px 6px; */
+    }
+
+    .side-links a span {
+        font-size: 1rem;
+    }
+
+    .sidebar button.btn {
+        margin-top: 1rem;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    section.p-5,
+    section.px-5 {
+        padding: 1.5rem !important;
+    }
+
+    .upper-information div.border-end {
+        border-right: none !important;
+    }
+
+    .upper-up img {
+        height: 100% !important;
+    }
+
+    .card-wrapper div.w-50 {
+        width: 70% !important;
+    }
+
+    .upper-right .container .card-wrapper {
+        width: 70%;
+        text-align: center;
+    }
+
+    .upper-right .container .py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    .upper-right .container .card-wrapper h3.d-flex {
+        justify-content: center;
+    }
+
+    .upper-right .container {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .hospital-covered-row div.col-md-8 {
+        border-bottom: none !important;
+    }
+
+    .hospital-covered-row div.py-4 {
+        padding: 1rem 1.5rem !important;
+    }
+
+    .btn-secondary-color {
+        font-size: 0.8rem !important;
+    }
+
+    .hospital-covered-row {
+        padding: 1rem 0;
+    }
+}
+
+/* for mobile screen */
+@media screen and (max-width: 576px) {
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        max-width: auto;
+        width: auto;
+        min-width: 200px;
+        position: relative;
+        height: auto;
+        /* border-bottom: 1px solid var(--color-lighten); */
+        overflow-x: scroll;
+        border-right: none;
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .sidebar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .sidebar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .sidebar-heading {
+        /* flex-direction: column; */
+        gap: 1.5rem;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    aside.flex-column {
+        flex-direction: row !important;
+        gap: 1rem;
+    }
+
+    ul.side-links {
+        display: flex;
+        margin-bottom: 0;
+        gap: 1rem;
+
+    }
+
+    .side-links li {
+        position: relative;
+        width: 200px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: auto;
+        display: flex;
+        padding: 0;
+    }
+
+    .side-links img {
+        margin: auto;
+    }
+
+    .sidebar button.btn {
+        padding: 0.3rem 1rem !important;
+        margin: 1.5rem;
+        gap: .5rem;
+        font-size: 0.8rem;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+
+}
+
+
+
 
 /* ***************************************  ************************** */
 /* ***************************************  ******|            |****** */
@@ -670,23 +859,24 @@ h6.author-name::before {
     width: 0;
 }
 
-.hospital-covered-row{
+.hospital-covered-row {
     padding-left: 3rem !important;
     padding-right: 3rem !important;
 }
 
-.hospital-covered-row:last-child div{
+.hospital-covered-row:last-child div {
     border-bottom: none !important;
 }
 
 @media screen and (max-width: 1199.8px) {
-    .hospital-covered-row{
+    .hospital-covered-row {
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
     }
 }
+
 @media screen and (max-width: 576px) {
-    .hospital-covered-row{
+    .hospital-covered-row {
         padding-left: 0rem !important;
         padding-right: 0rem !important;
     }

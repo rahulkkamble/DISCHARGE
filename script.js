@@ -38,5 +38,12 @@ searchSmall.addEventListener('click', () => {
   searchBar.removeAttribute('disabled' , '')
 })
 
+// search icon will be hidden when you click on searchBar
+// const searchIcon = document.querySelector('.modal-content .search-icon')
+// searchBar.addEventListener('click', function(){
+//   // console.log(searchIcon.style.display)
+//   searchIcon.style.opacity = '0';
+// })
+
 // Header ends here
 
