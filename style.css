@@ -1010,6 +1010,14 @@ ul.procedure-detail::before {
 /* =============== media querries for my procedure ============================ */
 /* =============== media querries for my procedure ============================ */
 
+@media screen and (max-width: 1200px){
+    #historyTab .left-tab.px-5{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+
 @media screen and (max-width: 990px) and (min-width: 768px) {
     .my-procedure-container{
         width: 100%;
@@ -1023,12 +1031,28 @@ ul.procedure-detail::before {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
+
+    /* History tab */
 }
 
 @media screen and (max-width: 768px) {
     .progress-bar-wrapper{
         width: auto;
     }
+    #historyTab .left-tab,
+    #historyTab .right-tab{
+        margin-top: 1rem;
+    }
+    #historyTab .left-tab div.border-end{
+        border: none !important;
+    }
+    #historyTab .right-tab.px-5 {
+        padding-left: 4rem !important;
+    }
+    .left-tab .m-auto{
+        margin: 0 !important;
+    }
+
 }
 
 @media screen and (max-width: 499px) {
@@ -1043,5 +1067,36 @@ ul.procedure-detail::before {
         width: 40px;
         margin: 0 1rem;
     }
+    #historyTab .right-tab.px-5 {
+        padding-left: 3.2rem !important;
+    }
+    #historyTab .row.px-5{
+        padding: 0 !important;
+        margin: .3rem auto !important;
+    }
+    #historyTab .left-tab img{
+        width: 32px;
+    }
+    #historyTab .left-tab, #historyTab .right-tab {
+        margin-top: 0.3rem;
+    }
+    #historyTab .left-tab h5{
+        margin-bottom: 0;
+    }
 
+    .nav-tabs .nav-link{
+        height: 4rem;
+    }
+    #historyTab .right-tab.px-5 {
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+    #historyTab .right-tab.px-5 {
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+    }
 }
