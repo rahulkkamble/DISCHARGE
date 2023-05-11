@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex, follow">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="http://127.0.0.1:8000/frontend/discharge/assets/images/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="http://127.0.0.1:8000/frontend/discharge/assets/images/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="http://127.0.0.1:8000/frontend/discharge/assets/images/fav/favicon-16x16.png">
+    <link rel="manifest" href="http://127.0.0.1:8000/frontend/discharge/assets/images/fav/site.webmanifest">
+
+    <meta name="csrf-token" content="Ijy7Mh4tlSER9U7cRtB29QJQ5HDwFbHK5nNpMcds">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://127.0.0.1:8000/css/adminltev3.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/icheck-bootstrap@3.0.1/icheck-bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+    <style>
+        body {
+            background-color: var(--bg-grey) !important;
+        }
+    </style>
+</head>
+
+<body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <div class="login-logo">
+                <a href="http://127.0.0.1:8000/admin">
+                    <img src="http://127.0.0.1:8000/frontend/discharge/assets/images/logo.svg" style="width: 300px;"
+                        alt="Discharge">
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg text-bold">
+                    Welcome back!
+                </p>
+                <p class="text-center" style="margin-top: -15px;">
+                    Streamlining your hospital experience becomes easier!
+                </p>
+                <form action="http://127.0.0.1:8000/login" method="POST">
+                    <input type="hidden" name="_token" value="Ijy7Mh4tlSER9U7cRtB29QJQ5HDwFbHK5nNpMcds">
+                    <div class="form-group">
+                        <input id="username" type="username" class="form-control" required autocomplete="username"
+                            autofocus placeholder="Mobile/Email" name="username" value="">
+                    </div>
+                    <div class="form-group">
+                        <input id="password" type="password" class="form-control" name="password" required
+                            placeholder="Password">
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="icheck-primary">
+                                <input type="checkbox" name="remember" id="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">
+                                Login
+                            </button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+                <p class="mb-1">
+                    <a href="http://127.0.0.1:8000/password/reset">
+                        Forgot your password?
+                    </a>
+                </p>
+                <p class="mb-1">
+                    <a class="text-center" href="http://127.0.0.1:8000/register">
+                        Register
+                    </a>
+                </p>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+
+</body>
+
+</html>

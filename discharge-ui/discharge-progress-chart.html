@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <style>
+        .ticker {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            width: 100%; /* Customise */
+        }
+        .ticker .tick-container {
+            white-space: nowrap;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .ticker .tick-round{
+            position: absolute;
+            margin-top: -7px; /* Customise */
+            margin-left: -10px;
+            z-index:1;
+            height: 30px; /* Customise */
+            width: 30px; /* Customise */
+            border-radius: 25px;
+            
+        }
+        .ticker .tick-label {
+            position: relative;
+            top: 30px; /* Customise */
+            white-space: normal;
+            font-size: 10px; /* Customise */
+        }
+        .no-color{
+            background-color:inherit;
+        }
+    </style>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                
+                <h6>Progress Bar Ticks - Admission or Insurance approval Progress</h6>
+
+                <div class="progress"></div>
+
+            </div>
+
+            <div class="col-12 mt-5 pt-5">
+
+                <h6>Stacked Bar Chart - Day wise spend break up</h6>
+
+                <canvas id="stacker-bar-chart"></canvas>
+
+            </div>
+
+
+            <div class="col-12 mt-5 pt-5">
+
+                <h6>Vertical Bar Chart - Procedure break up Hospital Stay day wise</h6>
+
+                <canvas id="vertical-bar-chart"></canvas>
+
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+    
+    <script>
+
+        let ticks = [0, 25, 50, 75, 100];
+        let tickLabels = ['10/04/23 10:30am', '11/04/23 08:30am', '11/04/23 02:00pm'];
+        
+        addProgressTicks(".progress", ticks, tickLabels, "bg-danger");
+
+        /* 
+         * Ticks length should be greater than or equal to Tick Labels length
+         * Ticks background can be Bootstrap defined or custom background class
+        */
+        function addProgressTicks(element, ticks=[], tickLabels=[], ticksBg="bg-primary") {
+
+            let repStr = '';
+            
+            let ticksLt = ticks.length, tickLbLt = tickLabels.length;
+            console.log(ticksLt, tickLbLt);
+
+            if(ticksLt >= tickLbLt){
+
+                let progWP = parseInt((tickLbLt / ticksLt)*100, 10) + '%';
+
+                let progEle = '<div class="progress-bar '+ticksBg+'" style="width: '+progWP+';"></div>';
+
+                repStr += '<div class="ticker"> <div class="tick-container"> <div class="progress">';
+
+                for(let t=0; t<ticksLt; t++){
+                    let fromLeft = ticks[t] + '%';
+                    let tickLbl = (tickLabels[t] !== undefined) ? tickLabels[t] : "";
+                    let tickBg = (tickLabels[t] !== undefined) ? ticksBg : "no-color";
+                    repStr += '<div class="tick-round '+tickBg+'" style="left: '+fromLeft+';"> <span class="tick-label">'+tickLbl+'</span> </div>';
+                }
+
+                repStr += progEle;
+
+                repStr += '</div> </div> </div>';
+
+                $(element).replaceWith(function(n){
+                    return repStr;
+                });
+
+            }else{
+                alert("Ticks should be greater than Labels");
+            }
+
+        }
+        
+    </script>
+
+
+    <script>
+
+        var ctx1 = document.getElementById("stacker-bar-chart").getContext('2d');
+        var stackChart = new Chart(ctx1, {
+        	type: 'bar',
+        	data: {
+        		labels: ["Apr 03", "Apr 04", "Apr 05", "Apr 06", "Apr 07"],
+        		datasets: [{
+        			label: 'Insurance',
+        			backgroundColor: "#ffb82f",
+        			data: [1200, 400, 600, 500, 950],
+        		}, {
+        			label: 'Non-Insurance',
+        			backgroundColor: "#abda21",
+        			data: [500, 200, 400, 500, 900],
+        		}],
+        	},
+        	options: {
+        		tooltips: {
+        			displayColors: true,
+        			callbacks: {
+        				mode: 'x',
+        			},
+        		},
+        		scales: {
+        			x: {
+        				stacked: true,
+        			},
+        			y: {
+        				stacked: true
+        			}
+        		},
+        		responsive: true
+        	}
+        });
+
+    </script>
+
+    <script>
+
+        var ctx2 = document.getElementById("vertical-bar-chart").getContext('2d');
+        var stackChart = new Chart(ctx2, {
+        	type: 'bar',
+        	data: {
+        		labels: ["Apr 03", "Apr 04", "Apr 05", "Apr 06", "Apr 07"],
+        		datasets: [{
+        			label: 'Hospital Stay',
+        			backgroundColor: "#03bffa",
+        			data: [1200, 400, 600, 500, 950],
+        		}],
+        	},
+        	options: {
+        		tooltips: {
+        			displayColors: true,
+        		},
+        		responsive: true
+        	}
+        });
+
+    </script>
+
+  </body>
+</html>
